@@ -23,7 +23,6 @@ public interface ICityRepository extends JpaRepository<City, Integer>, JpaSpecif
 	/**
 	 * xóa nhiều city
 	 */
-//sua department
 	@Modifying
 	@Transactional
 	@Query("delete from City where id in (:ids)")  

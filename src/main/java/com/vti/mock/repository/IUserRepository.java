@@ -11,5 +11,5 @@ public interface IUserRepository extends JpaRepository<User, Integer>, JpaSpecif
 	
 	public User findByEmail(String email);
 	
-	
+	public User findByFacebookId(String facebookId);
 }

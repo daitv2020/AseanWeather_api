@@ -20,8 +20,8 @@ CREATE TABLE `User`(
 	UserID			INT UNSIGNED NOT NULL  PRIMARY KEY AUTO_INCREMENT,
     FacebookID		VARCHAR(250) NOT NULL UNIQUE,
 	`Name`			NVARCHAR(250) NOT NULL,
-    Email 			VARCHAR(50) NOT NULL UNIQUE KEY ,
-    Address			NVARCHAR(250) NOT NULL
+    Email 			VARCHAR(50) NOT NULL UNIQUE KEY,
+    LoginDate		DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
 -- CREATE TABLE: Country
@@ -68,9 +68,9 @@ VALUES 					(	"ngthanhtien@gmail.com"		,	"admin123"		),
                         (	"hatienhiepn@gmail.com"		,	"admin123"		);
 
 -- INSERT DATABASE TO TABLE User
-INSERT INTO `User`		(UserID,		FacebookID				,	`Name`						, 	Email					,	Address		)
-VALUES					(	1	,	"2000000000000000"		,	"Nguyễn Thanh Tiến"			,	"ngthanhtien@gmail.com"	,	"Trung thôn, Đông Hội, Đông Anh, Hà Nội"),
-						(	2	,	"1000000000000000"		,	"Nguyễn Hoàng Giang"		,	"nghoanggiang@gmail.com",	"Trung thôn, Đông Hội, Đông Anh, Hà Nội");
+INSERT INTO `User`		(UserID,		FacebookID				,	`Name`						, 	Email				, LoginDate)
+VALUES					(	1	,	"2000000000000000"		,	"Nguyễn Thanh Tiến"			,	"ngthanhtien@gmail.com"	, "2021-05-10"),
+						(	2	,	"1000000000000000"		,	"Nguyễn Hoàng Giang"		,	"nghoanggiang@gmail.com", "2021-05-10");
 -- INSERT DATABASE TO TABLE COUNTRY
 INSERT INTO Country		(CountryID, 	CountryName					, 	`Description` 			, 	Image		) 
 VALUES 					(	1		,	"Brunei"					,		"abc"				,	"https://www.asean.org/wp-content/uploads/2012/05/Flag_of_Brunei-01-e1456993078833.jpg"		),

@@ -14,16 +14,16 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
- * map class voi table trong database
+ * mapping class voi table trong database
  */
 @Entity
-@Table(name = "City", catalog = "WeatherDatabase")
+@Table(name = "City")
 public class City implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * map column
+	 * mapping column
 	 */
 	@Column(name = "CityID")
 	@Id
@@ -56,8 +56,14 @@ public class City implements Serializable {
 	 * Constructor for class Admin
 	 */
 	public City() {
-		// TODO Auto-generated constructor stub
+		
 	}
+
+	public City(int id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+
 
 	/**
 	 * getter va setter

@@ -1,6 +1,7 @@
 package com.vti.mock.entity;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -15,17 +16,21 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 /**
- * map class voi table trong database
+ * mapping class voi table trong database
  */
 @Entity
-@Table(name = "User", catalog = "WeatherDatabase")
+@Table(name = "User")
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * map column
+	 * mapping column
 	 */
 	@Column(name = "UserID")
 	@Id
@@ -40,10 +45,12 @@ public class User implements Serializable {
 
 	@Column(name = "Email", length = 50, nullable = false, unique = true)
 	private String email;
-
-	@Column(name = "Address", length = 250)
-	private String address;
-
+	
+	@Column(name = "LoginDate")
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	@CreationTimestamp
+	private LocalDateTime loginDate;
+	
 	/**
 	 * join with city table -> Favourite city
 	 */
@@ -92,16 +99,20 @@ public class User implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	public String getAddress() {
-		return address;
+	
+	public LocalDateTime getLoginDate() {
+		return loginDate;
 	}
-
-	public void setAddress(String address) {
-		this.address = address;
+	
+	public void setLoginDate(LocalDateTime loginDate) {
+		this.loginDate = loginDate;
 	}
 	
 	public List<City> getFavoriteCities() {
 		return favoriteCities;
+	}
+	
+	public void setFavoriteCities(List<City> favoriteCities) {
+		this.favoriteCities = favoriteCities;
 	}
 }

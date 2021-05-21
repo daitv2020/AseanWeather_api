@@ -12,16 +12,16 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
- * map class voi table trong database
+ * mapping class voi table trong database
  */
 @Entity
-@Table(name = "Country", catalog = "WeatherDatabase")
+@Table(name = "Country")
 public class Country implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * map column
+	 * mapping column
 	 */
 	@Column(name = "CountryID")
 	@Id
@@ -44,7 +44,7 @@ public class Country implements Serializable{
 	private List<City> cities;
 	
 	public Country() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public int getId() {

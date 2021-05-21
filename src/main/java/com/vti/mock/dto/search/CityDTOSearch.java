@@ -1,7 +1,5 @@
 package com.vti.mock.dto.search;
 
-import java.util.List;
-
 public class CityDTOSearch {
 
 	private String name;
@@ -12,18 +10,8 @@ public class CityDTOSearch {
 
 	private String image;
 
-	private List<UserDTOSearch> listUsers;
-
 	public CityDTOSearch() {
 		// TODO Auto-generated constructor stub
-	}
-
-	public CityDTOSearch(String name, String description, int countryID, String image, List<UserDTOSearch> listUsers) {
-		this.name = name;
-		this.description = description;
-		this.countryID = countryID;
-		this.image = image;
-		this.listUsers = listUsers;
 	}
 
 	public CityDTOSearch(String name, String description, int countryID, String image) {
@@ -33,6 +21,8 @@ public class CityDTOSearch {
 		this.image = image;
 	}
 
+	
+    
 	public String getName() {
 		return name;
 	}
@@ -47,10 +37,6 @@ public class CityDTOSearch {
 
 	public String getImage() {
 		return image;
-	}
-
-	public List<UserDTOSearch> getListUsers() {
-		return listUsers;
 	}
 
 }

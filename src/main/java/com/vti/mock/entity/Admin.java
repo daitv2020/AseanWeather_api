@@ -10,16 +10,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * map class voi table trong database
+ * mapping class voi table trong database
  */
 @Entity
-@Table(name = "Admin", catalog = "WeatherDatabase")
+@Table(name = "Admin")
 public class Admin implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * map column
+	 * mapping column
 	 */
 	@Column(name = "AdminID")
 	@Id
@@ -36,8 +36,14 @@ public class Admin implements Serializable {
 	 * Constructor for class Admin
 	 */
 	public Admin() {
-		// TODO Auto-generated constructor stub
 	}
+
+	public Admin(int id, String email) {
+		super();
+		this.id = id;
+		this.email = email;
+	}
+
 
 	/**
 	 * getter va setter

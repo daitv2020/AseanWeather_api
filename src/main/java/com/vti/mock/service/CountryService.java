@@ -25,28 +25,4 @@ public class CountryService implements ICountryService{
 		return countryRepository.findByName(name);
 	}
 
-	/**
-	 * create country
-	 */
-	@Override
-	public void createCountry(Country country) {
-		countryRepository.save(country);
-	}
-
-	/**
-	 * update info country
-	 */
-	@Override
-	public void updateCountry(Country country) {
-		countryRepository.save(country);
-	}
-
-	/**
-	 * delete 1 country
-	 */
-	@Override
-	public void deleteCountry(int id) {
-		countryRepository.deleteById(id);
-	}
-
 }

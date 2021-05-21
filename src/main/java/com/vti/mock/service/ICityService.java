@@ -2,9 +2,14 @@ package com.vti.mock.service;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import com.vti.mock.entity.City;
 
 public interface ICityService {
+	
+	public Page<City> getAllCities(Pageable pageable, String search);
 	
 	public City getCityById(int id);
 

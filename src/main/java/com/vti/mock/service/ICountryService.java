@@ -8,9 +8,4 @@ public interface ICountryService {
 
 	public Country getCountryByName(String name);
 	
-	public void createCountry(Country country);
-
-	public void updateCountry(Country country);
-	
-	public void deleteCountry(int id);
 }
